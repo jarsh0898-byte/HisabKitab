@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hisabkitab</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🧾 Hisakitab</h1>
+
+<h3>Customer Details</h3>
+<input type="text" id="customerName" placeholder="Customer Name">
+<br><br>
+<input type="text" id="customerPhone" placeholder="Phone Number">
+<br><br>
+
+<h3>Items</h3>
+<input type="text" id="item" placeholder="Item Name">
+<br><br>
+<input type="number" id="price" placeholder="Price">
+<br><br>
+<input type="number" id="qty" placeholder="Quantity">
+<br><br>
+
+<button onclick="addItem()">Add Item</button>
+<hr>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+    </tr>
+    <tbody id="billBody">
+    </tbody>
+</table>
+
+<h2>Grand Total: ₹ <span id="total">0</span></h2>
+<br>
+<button onclick="generateBill()">Generate Bill</button>
+
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
+
+
